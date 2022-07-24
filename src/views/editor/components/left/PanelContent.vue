@@ -24,5 +24,6 @@ defineProps<{
   margin: 0 24px;
   flex: 1;
   width: 300px;
+  position: relative;
 }
 </style>

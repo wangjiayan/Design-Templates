@@ -1,7 +1,10 @@
 <template>
   <div class="background-section__header">
     <div class="background-section__header">
-      <p class="colors-title">主题颜色</p>
+      <div class="leftPanel-background-colors">
+        <p class="colors-title">主题颜色</p>
+        <span class="leftPanel-background-colors-items add-color"></span>
+      </div>
       <p class="colors-title">预设颜色</p>
       <div class="leftPanel-background-colors">
         <span
@@ -34,12 +37,14 @@
         </div>
       </div>
     </div>
+    <ColorPicker></ColorPicker>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { PRESET_COLOR, BG_IMG } from './constants'
 import useEditorStore from '@/stores/editor'
+import ColorPicker from './ColorPicker/index.vue'
 
 const editeorStore = useEditorStore()
 const handleClick = (value: string) => {
@@ -79,6 +84,13 @@ const handleClickImg = (url: string) => {
 }
 .leftPanel-background-colors {
   overflow: hidden;
+}
+.add-color {
+  background: url(https://static.chuangkit.com/tools/pc-design/prod/3a6e936a4ecde69269ae.png);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 36px 36px;
+  border: none;
 }
 .leftPanel-background-colors-items {
   border: 1px solid rgba(0, 0, 0, 0.1);
